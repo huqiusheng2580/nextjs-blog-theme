@@ -1,147 +1,148 @@
-![Netlify Next.js Blog Template designed by Bejamas](https://user-images.githubusercontent.com/43764894/223762618-62742b4e-9424-44a7-8e85-9f7e4e19db54.png)
+[Netlify Next.js 博客模板（设计者：Bejamas）](https://user-images.githubusercontent.com/43764894/223762618-62742b4e-9424-44a7-8e85-9f7e4e19db54.png)
 
+[![部署到 Netlify 按钮](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/nextjs-blog-theme)
 
-[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/nextjs-blog-theme)
+可自定义的博客入门模板，使用了以下技术：
 
-
-A customizable blog starter using:
-
-- [Next.js](https://github.com/vercel/next.js) v15 (Pages Router)
+- [Next.js](https://github.com/vercel/next.js) v15（Pages Router）
 - [Tailwind](https://tailwindcss.com/) v4.x
-- [Netlify Visual Editor](https://docs.netlify.com/visual-editor/overview/)
-- Built-in [MDX](https://mdxjs.com/) support
-- Includes modern design with dark & light themes
+- [Netlify 可视化编辑器（Netlify Visual Editor）](https://docs.netlify.com/visual-editor/overview/)
+- 内置 [MDX](https://mdxjs.com/) 支持
+- 含现代化设计，支持深色与浅色主题
 
-![Preview of blog theme. Author named Jay Doe and blog's name is "Next.js Blog Theme" with one blog post](nextjs-blog-theme-preview.png)
+![博客主题预览：作者 Jay Doe，博客名称为 “Next.js Blog Theme”，带一篇博文](nextjs-blog-theme-preview.png)
 
-[Take a gander at the demo.](https://bejamas-nextjs-blog.netlify.app)
+[在线演示](https://bejamas-nextjs-blog.netlify.app)
 
-[Click here to watch the template walkthrough!](https://www.youtube.com/watch?v=63QZHs259dY)
+[点击观看模板演示视频](https://www.youtube.com/watch?v=63QZHs259dY)
 
-## Table of Contents:
+## 目录
 
-- [Getting Started](#getting-started)
-  - [Setting Up Locally](#setting-up-locally)
-  - [Using the Wizard](#using-the-setup-wizard)
-- [Configuring the Blog](#configuring-the-blog)
-- [Adding New Posts](#adding-new-posts)
-- [Netlify Visual Editor](#netlify-visual-editor)
-- [Testing](#testing)
-  - [Included Default Testing](#included-default-testing)
-  - [Removing Renovate](#removing-renovate)
+- [目录](#目录)
+- [快速开始](#快速开始)
+  - [本地搭建](#本地搭建)
+  - [使用设置向导](#使用设置向导)
+- [配置博客](#配置博客)
+- [添加新文章](#添加新文章)
+- [Netlify 可视化编辑器](#netlify-可视化编辑器)
+  - [在本地开发并使用 Netlify 可视化编辑器](#在本地开发并使用-netlify-可视化编辑器)
+  - [后续建议](#后续建议)
+- [测试](#测试)
+  - [内置的默认测试工具](#内置的默认测试工具)
+  - [移除 Renovate](#移除-renovate)
+- [支持](#支持)
 
-## Getting Started
+## 快速开始
 
----
+你可以通过两种方式开始使用本项目：在本地运行，或使用 [设置向导](https://nextjs-wizard.netlify.app/)。
 
-You can get started with this project in two ways: locally or using the [setup wizard](https://nextjs-wizard.netlify.app/).
+### 本地搭建
 
-### Setting Up Locally
+如果在本地操作，先在 GitHub 上点击本模板的 [Use this template](https://github.com/netlify-templates/nextjs-blog-theme/generate) 按钮。这会在你的 GitHub 账号下生成一个包含本模板文件的新仓库。完成后，克隆该仓库并在终端进入项目目录。
 
-If you're doing it locally, start with clicking the [use this template](https://github.com/netlify-templates/nextjs-blog-theme/generate) button on GitHub. This will create a new repository with this template's files on your GitHub account. Once that is done, clone your new repository and navigate to it in your terminal.
-
-From there, you can install the project's dependencies by running:
+在项目目录中安装依赖：
 
 ```shell
 yarn install
 ```
 
-Finally, you can run your project locally with:
+然后在本地运行项目：
 
 ```shell
 yarn run dev
 ```
 
-Open your browser and visit <http://localhost:3000>, your project should be running!
+在浏览器中打开 <http://localhost:3000>，你应该能看到运行中的项目。
 
-### Using the Setup Wizard
+### 使用设置向导
 
-![Preview of Setup Wizard showing the initial page of a setup form](nextjs-setup-wizard.png)
+![Setup Wizard 界面预览](nextjs-setup-wizard.png)
 
-Through the [setup wizard](https://nextjs-wizard.netlify.app/), you can create your blog in a few clicks and deploy to Netlify.
+通过 [设置向导](https://nextjs-wizard.netlify.app/)，你可以几步完成博客创建并部署到 Netlify。
 
-## Configuring the blog
+## 配置博客
 
-The config is based on environment variables to make it easy to integrate with any Jamstack platform, like Netlify.
+模板使用环境变量进行配置，这样方便与像 Netlify 这样的 Jamstack 平台集成。
 
-Here are the variables you can edit:
-| Variable | Description | Options
+下面是可以修改的环境变量：
+
+| 变量 | 说明 | 可选项 |
 | --- | --- | --- |
-| `BLOG_NAME` | the name of your blog, displayed below the avatar ||
-| `BLOG_TITLE` | the main header (`h1`) on the home page ||
-| `BLOG_FOOTER_TEXT`| the text in the footer ||
-| `BLOG_THEME` | the theme to pass to Tailwind | default |
-| `BLOG_FONT_HEADINGS` | the font-family for all HTML headings, from `h1` to `h6`| sans-serif (default), serif, monospace|
-| `BLOG_FONT_PARAGRAPHS` | the font-family for all other HTML elements | sans-serif (default), serif, monospace|
+| `BLOG_NAME` | 博客名称，显示在头像下方 | |
+| `BLOG_TITLE` | 主页上的主标题（`h1`） | |
+| `BLOG_FOOTER_TEXT` | 页脚显示的文本 | |
+| `BLOG_THEME` | 传给 Tailwind 的主题 | 默认 |
+| `BLOG_FONT_HEADINGS` | 所有标题（`h1` 到 `h6`）的字体族 | sans-serif（默认）、serif、monospace |
+| `BLOG_FONT_PARAGRAPHS` | 其他段落与元素的字体族 | sans-serif（默认）、serif、monospace |
 
-All of the env variables can be configured through the [Wizard](https://nextjs-wizard.netlify.app/) or through setting the project's environment variables. You can do this in your Netlify dashaboard (Site settings/Build & deploy/Environment/Environment variables).
+所有这些环境变量可以通过 [向导](https://nextjs-wizard.netlify.app/) 配置，或在你部署平台（例如 Netlify）的站点设置中配置（Site settings → Build & deploy → Environment variables）。
 
 https://user-images.githubusercontent.com/3611928/153997545-6dcdeef0-e570-49e7-93d6-ce0d393d16c9.mp4
 
-[alt: video walkthrough of editing env vars]
+[说明：演示如何编辑环境变量的视频]
 
-If setting an environment variable isn't your cup of tea, the defaults can be changed in [`utils/global-data.js`](/utils/global-data.js). You can also remove the variables and hard code blog information where these variables are used in the code base.
+如果不想使用环境变量，也可以在 `utils/global-data.js` 中修改默认值，或者直接在代码中硬编码博客信息（不推荐，但可行）。
 
-- `BLOG_THEME, BLOG_FONT_HEADINGS, & BLOG_FONT_PARAGRAPHS` are used in [`tailwind-preset.js`](tailwind-preset.js)
-- `BLOG_NAME, BLOG_TITLE, BLOG_FOOTER_TEXT` are used in [`pages/index.js`](pages/index.js) & [`pages/posts/[slug].js`](pages/posts/[slug].js) through the `globalData` object.
+- `BLOG_THEME`, `BLOG_FONT_HEADINGS`, 和 `BLOG_FONT_PARAGRAPHS` 在 [`tailwind-preset.js`](tailwind-preset.js) 中使用
+- `BLOG_NAME`, `BLOG_TITLE`, `BLOG_FOOTER_TEXT` 在 [`pages/index.js`](pages/index.js) 与 [`pages/posts/[slug].js`](pages/posts/[slug].js) 中通过 `globalData` 对象使用
 
-## Adding new posts
+## 添加新文章
 
-All posts are stored in `/posts` directory. To make a new post, create a new file with the [`.mdx` extension](https://mdxjs.com/).
+所有文章都存放在项目的 `/posts` 目录下。要新增一篇文章，新建一个以 `.mdx` 为扩展名的文件即可。
 
-Since the posts are written in `MDX` format you can pass props and components. That means you can use [React components](https://reactjs.org/docs/components-and-props.html) inside your posts to make them more interactive. Learn more about how to do so in the [MDX docs on content](https://mdxjs.com/docs/using-mdx/#components).
+由于文章使用 `MDX` 格式，你可以传入 props 和组件，也就是说可以在文章中使用 [React 组件](https://reactjs.org/docs/components-and-props.html) 来增强交互性。更多用法请参阅 [MDX 内容文档](https://mdxjs.com/docs/using-mdx/#components)。
 
 https://user-images.githubusercontent.com/3611928/152727802-102ec296-41c8-446d-93ed-922d11187073.mp4
 
-[alt: video walkthrough of adding a new blog post]
+[说明：展示如何添加新博文的视频]
 
-## Netlify Visual Editor
+## Netlify 可视化编辑器
 
-This template is configured to work with [visual editing](https://docs.netlify.com/visual-editor/overview/) and [Git Content Source](https://docs.netlify.com/create/content-sources/git/).
+本模板已配置以支持 [可视化编辑](https://docs.netlify.com/visual-editor/overview/) 与 [Git 内容源](https://docs.netlify.com/create/content-sources/git/)。
 
-### Develop with Netlify Visual Editor Locally
+### 在本地开发并使用 Netlify 可视化编辑器
 
-The typical development process is to begin by working locally. Clone this repository, then run `npm install` in its root directory.
+通常的开发流程是先在本地工作：克隆仓库，然后在项目根目录运行 `npm install`。
 
-Run the Next.js development server:
+启动 Next.js 开发服务器：
 
 ```txt
 cd nextjs-blog-theme
 npm run dev
 ```
 
-Install the [Netlify Visual Editor CLI](https://www.npmjs.com/package/@stackbit/cli). Then open a new terminal window in the same project directory and run the Netlify visual editor dev server:
+安装 Netlify 可视化编辑器的 CLI（Netlify Visual Editor CLI）：
 
 ```txt
 npm install -g @stackbit/cli
 stackbit dev
 ```
 
-This outputs your own Netlify visual editor URL. Open this, register, or sign in, and you will be directed to Netlify's visual editor for your new project.
+运行后会输出你本地的可视化编辑器 URL，打开它并登录，就能在 Netlify 的可视化编辑器中查看并编辑你的项目。
 
-![Next.js Dev + Visual Editor Dev](https://assets.stackbit.com/docs/next-dev-stackbit-dev.png)
+![Next.js 开发 + Visual Editor 本地运行](https://assets.stackbit.com/docs/next-dev-stackbit-dev.png)
 
-### Next Steps
+### 后续建议
 
-Here are a few suggestions on what to do next if you're new to Netlify Visual Editor:
+如果你刚接触 Netlify 可视化编辑器，可以参考：
 
-- Learn [Netlify visual editor overview](https://docs.netlify.com/visual-editor/visual-editing/)
-- Check [Netlify visual editor reference documentation](https://visual-editor-reference.netlify.com/)
+- 学习 [Netlify 可视化编辑器概览](https://docs.netlify.com/visual-editor/visual-editing/)
+- 查阅 [Netlify 可视化编辑器参考文档](https://visual-editor-reference.netlify.com/)
 
-## Testing
+## 测试
 
-### Included Default Testing
+### 内置的默认测试工具
 
-We’ve included some tooling that helps us maintain these templates. This template currently uses:
+我们在模板中包含了一些工具以便维护：
 
-- [Renovate](https://www.mend.io/free-developer-tools/renovate/) - to regularly update our dependencies
+- [Renovate](https://www.mend.io/free-developer-tools/renovate/) — 用于定期更新依赖
 
-If your team is not interested in this tooling, you can remove them with ease!
+如果你的团队不需要这些工具，可以很容易地将它们移除。
 
-### Removing Renovate
+### 移除 Renovate
 
-In order to keep our project up-to-date with dependencies we use a tool called [Renovate](https://github.com/marketplace/renovate). If you’re not interested in this tooling, delete the `renovate.json` file and commit that onto your main branch.
+为了保持依赖最新，模板使用了 [Renovate](https://github.com/marketplace/renovate)。如果你不需要这个工具，只需删除根目录下的 `renovate.json` 文件并提交到主分支。
 
-## Support
+## 支持
 
-If you get stuck along the way, get help in our [support forums](https://answers.netlify.com/).
+如果在使用过程中遇到问题，可以到 [support 论坛](https://answers.netlify.com/) 获取帮助。
